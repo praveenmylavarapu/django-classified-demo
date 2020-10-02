@@ -11,10 +11,12 @@ class Command(BaseCommand):
     help = 'Setup Django Classified application'
 
     def create_admin(self):
+
+        #hardcoded values in code, probably would be better if in config file
+        email = 'admin@example.com'
         username = 'admin'
         password = 'admin'
-        email = 'admin@example.com'
-
+        
         try:
             User.objects.create_superuser(
                 username=username,
@@ -23,7 +25,7 @@ class Command(BaseCommand):
             )
         except IntegrityError:
             self.stdout.write('Admin user already created')
-            return
+            returns
 
         self.stdout.write(
             'Superuser {}/{} was created successfully.'.format(
