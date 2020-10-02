@@ -22,8 +22,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-# Expected comma separated string with the ALLOWED_HOSTS list
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1,.herokuapp.com').split(',')
+# Expected comma separated string with the HOSTS_ALLOWED list
+HOSTS_ALLOWED = os.environ.get('HOSTS_ALLOWED', '127.0.0.1,.herokuapp.com').split(',')
 
 DATABASES = {
     'default': env.db(),
